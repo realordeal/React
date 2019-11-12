@@ -1,0 +1,9 @@
+//react에선 array작업을 할때 항상 key값이 들어갔어야 했다.
+//react16에선 fragment라는걸 활용할 수 있다.
+//return fragment라는건 span처럼 생겼다.
+//fragment는 <>로도 쓸 수 있다.
+//하지만 지금은 create react app이 아직 fragment를 지원하지 않아서 오류가 난다.
+//웹팩을 사용하면 잘 작동한다.
+//Fragment가 좋은점은 <span>이나 array를 사용 안해도 된다.
+//Fragment는 <span>과 비슷하지만 좀 더 명확하고 웹사이트에 등장하지 않는다.
+//또한 return string이 가능하다.

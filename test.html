@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script type="text/javascript">
+        var number = 0;
+
+        var btnIncrese = document.getElementById('increase');
+        var elNumber = document.getElementById('number');
+        //var elNumber = $('#number');
+        //var btnIncrese = $('#increase');
+        //
+        btnIncrese.onclick = function(){
+          number++;
+          elNumber.innerText = number;
+        }
+        // function clickClick() {
+        //   var elNumber = document.getElementById('number');
+        //
+        //   number++;
+        //   elNumber.innerText = number;
+        // }
+
+        </script>
+    </head>
+    <body>
+
+      <div>
+          <h1>Counter</h1>
+          <h2 id="number">0</h2>
+          <button id="increase">+</button>
+      </div>
+    </body>
+</html>

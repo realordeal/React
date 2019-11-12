@@ -1,0 +1,5 @@
+context API를 하기전에
+react앱이 있는 파일을 생성해주고 create-react-app 폴더이름
+그다음 그 폴더에서 .env파일을 만들어주고
+cmd창에서 yarn add styled-components styled-reset styled-flex-component typography
+입력하여 리액트 스타일을 다운 받아준다.

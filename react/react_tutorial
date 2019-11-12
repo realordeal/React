@@ -1,0 +1,131 @@
+<!-- Just JavaScript
+  No framwork to lean
+  Composition
+  Unidirectional Dataflow
+  Data is on the state.
+  The UI displays the data.
+  If the state changes, the UI updates.
+  Data -> UI
+  UI -> Data (x) 단 방향이다. 데이터가 변하면 UI가 변하고 UI변하면 데이터는 바뀌지 않는다.
+  YTS.AG == 영화에 관련된 정보들이 있는 API이다.
+  cmd에서 react 를 다운받아야하는데
+  npm install -g create-react-app을 치면 된다.
+  그리고 yarn을 꼭 설치를해야 프로젝트가 생성이 된다.
+  그다음 creat-react-app movie_app 을 입력하여 react 패키지를 다운받아 준다.
+  그리고 movie_app를 실행하기 위해 경로를 설정해주고
+  yarn start를 입력해주면 실행이 된다.
+  그리고 App.js에서 내가 코드를 바꾸면 yarn에서 바로 새로고침을 통하여 바뀐 코드로 출력이된다.
+  JSX는 리액트 컴포넌트를 만들때 사용하는 언어이다.
+  리액트에는 2가지 주요 컨셉이 있는데
+  하나는 state 나머지 하나는 props라고 한다.
+  //이미지의 경우 소스를 보면 logo라고 쓰면 된다.
+  //CSS의 class가 아니라 className이라고 쓴다.
+  //모든 컴포넌트는 render function을 갖고있다.
+  //render기능은 뭔가를 보여주는, 출력하는 기능이다.
+  //yarn을 실행한다면 JS의 모든 코드를 가져와서 html파일에 담아 우리가 지금 열고있는 파일이다.
+  //그 파일을 public 폴더에서 찾을 수 있다. index.html이게 CRA로 만들어진 파일이다.
+  //한개의 컴포넌트를 render하고 있다. 컴포넌트 이름은 app이고 그 app컴포넌트 안에 여러개의 컴포넌트를 만들 수 있다.
+  //하지만 출력은 1개만 하고 있다.
+  //react와 reactDOM의 차이는 리액트는 UI라이브러리이다.
+  //UI, 유저인터페이스
+  //리액트DOM은 리액트를 웹사이트에 출력하는걸 도와주는 모델이다.
+  //DOM, Document Object Model
+  //리액트를 사용해서 웹사이트에 올리고 싶으면 reactDOM을 쓰면 된다.
+  //리액트를 모바일 앱에 올리고 싶으면 reactNative를 쓰면 된다.
+  //리액트 == 라이브러리  리액트돔=라이브러리를 웹사이트에 출력해줌
+  //리액트돔은 컴포넌트를 1개의 컴포넌트를 출력(render)하고 그 document안에 element가 있는데 elementID는 root이다.
+  //이건 index.html파일에 숨겨져있다.
+  //그래서 렌더를 하면 모든 컴포넌트들이 여기서 출력된다.
+  //컴포넌트는 항상 render을 해야한다.
+  //컴포넌트 > render > return > JSX
+  //JSX란 리액트로 작성하는 html이다.
+  //JSX의 경우 명령을 실행시키려면 괄호를 꼭 쳐야한다.
+  //react는 많은 엘리먼트가 많을경우 key라는것을 줘야한다.
+
+  Ctrl + /
+  주석을 토글형식으로 적용/해제
+  Ctrl + F
+  찾기/바꾸기
+  Ctrl + Shift + F
+  프로젝트 전체에서 찾기
+  Ctrl + E
+  선택 영역을 찾기/바꾸기
+  Ctrl + G
+  라인 번호로 커서 이동
+  Ctrl + R
+  키워드로 이동
+  Ctrl + M
+  블럭 매칭
+  Ctrl + J
+  라인 조인
+  Ctrl + L
+  라인 선택
+  Ctrl + D
+  현재 단어 선택 (이후 전체 범위에서 같은 단어 선택)
+  Ctrl + Backspace, Delete
+  단어 별 삭제
+  Ctrl + Shift + K
+  현재 라인 삭제
+  Ctrl + Shift + D
+  현재 라인 다음 라인으로 복사
+  Ctrl + [, ]
+  들여쓰기
+  Ctrl + Alt + [, ]
+  코드 폴딩 토글
+  Ctrl + Shift + Alt + [, ]
+  전체 코드 폴딩 토글
+  Ctrl + ←, →
+  단어 별 이동
+  Ctrl + ↑, ↓
+  현재 라인 이동
+  Ctrl + Alt + ↑, ↓
+  다중 커서 삽입
+  Ctrl + Enter
+  현재 라인 밑으로 개행
+  Ctrl + Shift + Enter
+  현재 라인 위로 개행
+  Ctrl + Space
+  코드 힌트 보기
+  Shift + 방향키
+  텍스트 선택
+  Shift + Ctrl + ←, →
+  단어별 텍스트 선택
+  참고
+  Atom에디터는 컴파일(실행)기능이 따로 없기 때문에 번거로움이 있다.
+  따라서 이런 번거로움을 해결해줄 script라는 패키지를 이용하여 해당 기능을 추가할 수 있다.
+
+  ▶ 실행 단축키 : ctrl + shift + b
+
+  react안에 proptypes가 있었는데 두개가 이제 나뉘어서 따로따로 인스톨 해야한다.
+  영화앱과 같은 어플리케이션을 만든다면 will mount를 진행할 때 api에 작업을 요청할거다
+  해당 수행이 완료되면 그 다음에 데이터 관련된 작업을 한다.
+  이 싸이클을 알아두면 컴포넌트에 만드는데 도움된다.
+  state는 리액트안에 있는 오브젝트이다.
+  state가 바뀔 때마다 컴포넌트는 다시 render 한다.
+  어떤 컴포넌트는 state이 없는 stateless functional 컴포넌트이다.
+  두개의 컴포넌트는 큰 차이가 있다.
+  한개는 state이 있고 state가 없고 필요하지 않는다.
+  이걸 dumb(멍청한) 컴포넌트 그리고 smart(똑똑한) 컴포넌트라고 한다.
+  smart컴포넌트는 state가 있고 dumb컴포넌트는 state가 없다.
+  그들이 가지고 있는건 props뿐이다.
+  state가 없고 props밖에 없을때는 클래스 컴포넌트를 쓰는 대신에 그들을 functional 컴포넌트로 바꾸면 된다.
+  정확히 말하면 state functional 컴포넌트이다.
+
+  Ajax(Asynchronous JavaScipt ans XML)약자이다.
+  요즘은 XML 신경 안쓰고 우리가 신경쓰는 포멧은 JOSN이다.
+  JSON(JavaScript Object Notation)이다.
+  오브젝트를 자바스크립트로 작성하는 기법이다.
+  AJAX를 React에 적용하는 방법은 심플하다. FETCH 덕분이다.
+  FETCH는 뭔가를 잡는다는 뜻이다.
+  fetch request는 url로 갈것이다.
+
+  Promise는 새로운 자바스크립트 컨셉이다.
+  이게 쿨한 이유는 Asynchronous programming이기 때문이다.
+
+
+  리액트 하는 방법
+  구굴링해서 npm을 설치하고 yarn도 설치한다.
+  cmd창에서 npm install -g create-react-app을 쳐서 다운을 받는다
+  그다음 react파일을 만들 경로를 cd ~~해서 정해주고 create-react-app 폴더이름을 입력하여 설치해준다.
+  
+ -->
